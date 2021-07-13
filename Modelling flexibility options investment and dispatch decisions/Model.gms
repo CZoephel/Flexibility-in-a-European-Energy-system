@@ -1,7 +1,9 @@
 
-*This model was developed based on the ELTRAMOD model family of the
-*     Chair of Energy Economics at TU Dresden
-*Author: Christoph Zöphel
+*=== Modelling investment and dispatch decisions for flexibility options
+*=== This model was developed based on the ELTRAMOD model family of the
+*===      Chair of Energy Economics at TU Dresden
+*=== Author: Christoph Zöphel
+*=== Last updated: 25.06.2021
 
 ********************************************************************************
 ***************** Scenario Options *********************************************
