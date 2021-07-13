@@ -1,3 +1,10 @@
+## Model code
+
+**The model code is written in GAMS**
+
+See File [Model.gms](https://github.com/CZoephel/Flexibility-in-a-European-Energy-system/blob/main/Modelling%20flexibility%20options%20investment%20and%20dispatch%20decisions/Model.gms)
+
+## Input data
 **Input data can be found at [Zenodo](https://zenodo.org/)**
 
 **The [input data](https://zenodo.org/record/5095356#.YO2tw0xCTmE) contains**
