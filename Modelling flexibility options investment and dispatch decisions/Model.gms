@@ -183,8 +183,8 @@ Par=cf_ev_p              rng=EV_power!B1         Rdim=1  Cdim=1
 $offecho
 
 $onUNDF
-$IF NOT EXIST %DATE%_MOD_%PW_SHARE%_%rs%.gdx $call "gdxxrw data\%DATE%_MOD_%PW_SHARE%_%rs%.xlsx SQ=N SE=10 cmerge=1 @temp1.tmp"
-$gdxin %DATE%_MOD_%PW_SHARE%_%rs%.gdx
+$IF NOT EXIST %DATE%_TS_%PW_SHARE%_%rs%.gdx $call "gdxxrw data\%DATE%_TS_%PW_SHARE%_%rs%.xlsx SQ=N SE=10 cmerge=1 @temp1.tmp"
+$gdxin %DATE%_TS_%PW_SHARE%_%rs%.gdx
 $load c ch_w
 $load char_w res_dem dem_heat solar cf_ev cf_ev_p
 $gdxin
@@ -212,8 +212,8 @@ Par=char_ptx             rng=PtX!A3              rdim=1  Cdim=1
 $offecho
 
 $onUNDF
-$IF NOT EXIST MOD_input_NEW_%DATE%_v01.gdx $call "gdxxrw data\MOD_input_NEW_%DATE%_v01.xlsm SQ=N SE=10 cmerge=1 @temp2.tmp"
-$gdxin MOD_input_NEW_%DATE%_v01.gdx
+$IF NOT EXIST %DATE%_Tech_data.gdx $call "gdxxrw data\%DATE%_Tech_data.xlsm SQ=N SE=10 cmerge=1 @temp2.tmp"
+$gdxin %DATE%_Tech_data.gdx
 $load p tech ch_p ch_c ch_tech f map_techf map_pc map_ptech map_pf ptx ch_ptx
 $load pr_f  char_p char_c char_tech char_ptx
 $gdxin
@@ -227,8 +227,8 @@ par=li_ntc               rng=ntc!A4              RDim=2  CDim=0
 $offecho
 
 $onUNDF
-$IF NOT EXIST MOD_NTC_%DATE%_v02.gdx $call "gdxxrw data\MOD_NTC_%DATE%_v02.xlsx SQ=N SE=10 cmerge=1 @temp3.tmp"
-$gdxin MOD_NTC_%DATE%_v02.gdx
+$IF NOT EXIST %DATE%_NTC.gdx $call "gdxxrw data\%DATE%_NTC.xlsx SQ=N SE=10 cmerge=1 @temp3.tmp"
+$gdxin %DATE%_NTC.gdx
 $load  li li_c co_ntc li_ntc
 $gdxin
 $offUNDF
@@ -244,8 +244,8 @@ par=dsm_avail            rng=DSM_avail!A1                rdim=1  Cdim=1
 $offecho
 
 $onUNDF
-$IF NOT EXIST MOD_DSM_%DATE%.gdx $call "gdxxrw data\MOD_DSM_%DATE%.xlsx SQ=N SE=10 cmerge=1 @temp4.tmp"
-$gdxin MOD_DSM_%DATE%.gdx
+$IF NOT EXIST %DATE%_DSM.gdx $call "gdxxrw data\%DATE%_DSM.xlsx SQ=N SE=10 cmerge=1 @temp4.tmp"
+$gdxin %DATE%_DSM.gdx
 $load  dsm ch_dsm map_dsmc
 $load  char_dsm red_avail dsm_avail
 $gdxin
@@ -261,8 +261,8 @@ set=map_flexf            rng=flexRES!M3          Rdim=2  cdim=0
 $offecho
 
 $onUNDF
-$IF NOT EXIST MOD_flexRES_181025.gdx $call "gdxxrw data\MOD_flexRES_181025.xlsx SQ=N SE=10 cmerge=1 @temp5.tmp"
-$gdxin MOD_flexRES_181025.gdx
+$IF NOT EXIST %DATE%_dRES.gdx $call "gdxxrw data\%DATE%_dRES.xlsx SQ=N SE=10 cmerge=1 @temp5.tmp"
+$gdxin %DATE%_dRES.gdx
 $load flex_max ch_flex map_flexc map_flextech map_flexf
 $load char_flex
 $gdxin
