@@ -200,10 +200,10 @@ set=f                    rng=Fuels!A1            Rdim=0  cdim=1
 set=ch_tech              rng=technologies!A3     rdim=0  Cdim=1
 set=ptx                  rng=PtX!A4              rdim=1  cdim=0
 set=ch_ptx               rng=PtX!A3              rdim=0  Cdim=1
-set=map_techf            rng=Technologies!AX3    Rdim=2  cdim=0
-set=map_pc               rng=Plants!BL3          Rdim=2  cdim=0
-set=map_ptech            rng=Plants!BH3          Rdim=2  cdim=0
-set=map_pf               rng=Plants!BJ3          Rdim=2  cdim=0
+set=map_techf            rng=Technologies!AC3    Rdim=2  cdim=0
+set=map_pc               rng=Plants!V3           Rdim=2  cdim=0
+set=map_ptech            rng=Plants!U3           Rdim=2  cdim=0
+set=map_pf               rng=Plants!W3           Rdim=2  cdim=0
 Par=pr_f                 rng=Fuels!A1            Rdim=1  cdim=1
 Par=char_p               rng=Plants!A3           Rdim=1  cdim=1
 Par=char_c               rng=countries!A3        Rdim=1  cdim=1
