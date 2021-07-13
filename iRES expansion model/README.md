@@ -1,3 +1,5 @@
+**The model code is written in GAMS**
+
 **Input data can be found at [Zenodo](https://zenodo.org/)**
 
 **The input data contains**
