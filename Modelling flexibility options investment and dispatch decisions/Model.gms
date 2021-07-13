@@ -1,22 +1,29 @@
 
 *This model was developed based on the ELTRAMOD model family of the
 *     Chair of Energy Economics at TU Dresden
-*Author: Christoph Zöphel
+*Author: Christoph ZÃ¶phel
 
 ********************************************************************************
 ***************** Scenario Options *********************************************
 ********************************************************************************
 $setglobal       FROM    t1
 $setglobal       TO      t8760
+
+* Date of Input files 
 $setglobal       DATE    200203
+
+* Date of Output files 
 $setglobal       DATE1   200831
 
 * Define scenario name
 $set PW_SHARE    HP
+
 * Define CO2 price [EUR/t]
 $set co2pr       80
+
 * Define model run with (coup=1) or without (coup=0) sector coupling
 $set coup        0
+
 * Define flexibility factor (ff) [0,1]
 $set ff          0
 
@@ -31,7 +38,7 @@ $if not  "%coup%" == "0" $setglobal      NO_SC "*";
 ***************** File Statements *********************************************
 ********************************************************************************
 
-*Unterdrücken der Listing File
+*UnterdrÃ¼cken der Listing File
 $onUNDF
 *$offlisting offsymxref offsymlist
 OPTIONS
@@ -103,20 +110,20 @@ lt_ntc                   economical lifetime of NTC                             
 
 parameters
 *=========prices==========================
-pr_f(t,f)                fuel price  [€ per MWhth] and CO2 price [€ per tCO2]
+pr_f(t,f)                fuel price  [â‚¬ per MWhth] and CO2 price [â‚¬ per tCO2]
 
 *=========prices/costs ==========================
-co_curt                  Cost for curtailment of renewables [€ per MWh]
-co_f(tech,t)             cost for fuel (fuel price + mark up + transport costs) in € per MWhth
-co_co2(p,t)              cost for CO2 (CO2-allowances * emission factor) in € per MWhth
+co_curt                  Cost for curtailment of renewables [â‚¬ per MWh]
+co_f(tech,t)             cost for fuel (fuel price + mark up + transport costs) in â‚¬ per MWhth
+co_co2(p,t)              cost for CO2 (CO2-allowances * emission factor) in â‚¬ per MWhth
 
 *=========load =================
 char_c(c,ch_c)           countrie specific characteristics
 dem(t,c)                 load [MW]
 res_dem(t,c)             residual load [MW]
-dem_heat(t,c)            heat demand  [MW]
-cf_ev                    EV charging demand [MW]
-cf_ev_p                  EV charging power availablility
+dem_heat(t,c)            heat demand  [% of peak heat demand (see country characteristics)]
+cf_ev                    EV charging demand [% of yearly energy demand of EV fleet based on driving distance]
+cf_ev_p                  EV charging power availablility [% of battery capacity of EV fleet]
 
 *========technology characteristics=====================
 char_p(p,ch_p)           all characteristics of a plant
@@ -165,15 +172,10 @@ dsm_avail(t,dsm)         times series of overall DSM availability
 *===============================================================================
 *============unload data to GDX file ====================
 $onecho >temp1.tmp
-*set=t                   rng=Mapping1!A3         Rdim=1  Cdim=0
 set=c                    rng=country!A4          Rdim=1  cdim=0
 set=ch_w                 rng=Mapping1!A2         Rdim=0  Cdim=1
 par=char_w               rng=Mapping1!A2         Rdim=1  Cdim=1
 Par=res_dem              rng=Residual_Load!B2    Rdim=1  Cdim=1
-*Par=dem                 rng=Dem!B1              Rdim=1  Cdim=1
-*Par=gen_pv              rng=PV!B1               Rdim=1  Cdim=1
-*Par=gen_won             rng=Won!B1              Rdim=1  Cdim=1
-*Par=gen_woff            rng=Woff!B1             Rdim=1  Cdim=1
 Par=dem_heat             rng=Heat!B1             Rdim=1  Cdim=1
 Par=solar                rng=solar!B1            Rdim=1  Cdim=1
 Par=cf_ev                rng=EV!B1               Rdim=1  Cdim=1
@@ -333,7 +335,7 @@ t_d(t)$ (MOD(ord(t)-1,24)=0 ) =                  YES;
 
 
 Variables
-TOTAL_COSTS                      total costs [€]
+TOTAL_COSTS                      total costs [â‚¬]
 ;
 
 positive variables
