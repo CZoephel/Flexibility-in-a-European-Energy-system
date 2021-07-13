@@ -6,3 +6,5 @@ Two model codes can be found here on GitHub:
     - iRES expansion model (see Chapter 3 in thesis)
     
     - The Model for investment and Operations Decision for Flexibility Options (see Chapter 5 in thesis)
+    
+Further information regarding the input-data can be found in the sub-folders 
