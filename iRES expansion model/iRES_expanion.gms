@@ -159,15 +159,15 @@ max_share_rast_WON
 $onecho >temp1.tmp
 set=p            rng=RES_char!A4         rdim=1  cdim=0
 set=c            rng=c_char!A4           rdim=1  cdim=0
-set=r            rng=coordinates!A3      rdim=1  cdim=0
+set=r            rng=raster_data!A3      rdim=1  cdim=0
 set=ch_p         rng=RES_char!A2         rdim=0  Cdim=1
 set=ch_c         rng=c_char!A3           rdim=0  Cdim=1
-set=ch_r         rng=coordinates!A2      rdim=0  Cdim=1
-set=map_rc       rng=coordinates!T2      Rdim=2  cdim=0
-set=map_rw       rng=coordinates!V2      Rdim=2  cdim=0
+set=ch_r         rng=raster_data!A2      rdim=0  Cdim=1
+set=map_rc       rng=raster_data!T2      Rdim=2  cdim=0
+set=map_rw       rng=raster_data!V2      Rdim=2  cdim=0
 Par=char_p       rng=RES_char!A2         Rdim=1  cdim=1
 Par=char_c       rng=c_char!A3           Rdim=1  cdim=1
-Par=char_r       rng=coordinates!A2      Rdim=1  cdim=1
+Par=char_r       rng=raster_data!A2      Rdim=1  cdim=1
 Par=dem          rng=demand!A1           Rdim=1  Cdim=1
 
 $offecho
